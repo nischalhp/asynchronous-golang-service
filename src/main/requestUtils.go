@@ -28,13 +28,6 @@ func DownloadFiles(context echo.Context) error {
 	return context.String(http.StatusOK, "All processed")
 }
 
-func handleError(err error, context echo.Context) error {
-	if err != nil {
-		return context.String(http.StatusNotFound, err.Error())
-	}
-	return nil
-}
-
 func handleFiles(file string, context echo.Context, processedFileStatus chan bool) error {
 	content, err := context.FormFile(file)
 	var er = handleError(err, context)

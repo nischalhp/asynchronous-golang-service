@@ -6,43 +6,6 @@ import (
 	"github.com/labstack/echo"
 )
 
-//var wg sync.WaitGroup
-
-/*
-func main() {
-	//go echo(os.Stdin, os.Stdout)
-	//time.Sleep(5 * time.Second)
-	isProducerDone := make(chan bool)
-	buffer := make(chan int)
-
-	//wg.Add(1)
-	go func() {
-		for i := 0; i < 100; i++ {
-			fmt.Println("Producing ... ", i)
-			buffer <- i
-			time.Sleep(1 * time.Second)
-			//wg.Done()
-		}
-
-		isProducerDone <- true
-	}()
-	//wg.Wait()
-
-	go func() {
-		for product := range buffer {
-			fmt.Println("Consuming ..", product)
-		}
-	}()
-
-	<-isProducerDone
-}
-
-func echo(out io.Writer, in io.Reader) {
-	io.Copy(out, in)
-}
-*/
-//mentioning handlers
-
 func main() {
 	e := echo.New()
 	e.GET("/", welcomePage)
