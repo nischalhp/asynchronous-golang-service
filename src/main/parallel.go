@@ -9,7 +9,7 @@ import (
 func main() {
 	e := echo.New()
 	e.GET("/", welcomePage)
-	e.POST("/upload", DownloadFiles)
+	e.POST("/upload", HandlePostRequest)
 	e.Logger.Fatal(e.Start(":1323"))
 }
 
